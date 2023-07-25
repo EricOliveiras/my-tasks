@@ -1,11 +1,5 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-  
-Button.propTypes = {
-  btnId: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
-}
 
 const Button = ({ path, btnId, name }) => {
   return (
@@ -13,5 +7,10 @@ const Button = ({ path, btnId, name }) => {
   )
 }
 
+Button.propTypes = {
+  btnId: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+}
 
 export default Button
