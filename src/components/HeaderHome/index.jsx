@@ -1,12 +1,15 @@
+import { Link } from 'react-router-dom'
+import Button from '../button'
+
 import './style.css'
 
 const HeaderHome = () => {
   return (
     <div className="header-container">
-      <h2 id="header-title">My Tasks</h2>
+      <Link id="header-title" to={"/"}><h2>My Tasks</h2></Link>
       <div className="button-container">
-        <button id="login-button" type="submit">Entrar</button>
-        <button id="register-button"  type="submit">Registrar</button>
+        <Button path="/entrar" btnId="login-button" name="Entrar"/>
+        <Button path="/registrar" btnId="register-button" name="Registrar"/>
       </div>
     </div>
   )
