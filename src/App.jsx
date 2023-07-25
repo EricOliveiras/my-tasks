@@ -1,7 +1,9 @@
+import HeaderHome from "./components/HeaderHome"
+
 function App() {
   return (
     <>
-      <h1>Init Project</h1>
+      <HeaderHome />
     </>
   )
 }
