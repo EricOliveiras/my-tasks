@@ -1,0 +1,39 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  align-items: center;
+}
+
+#header-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+}
+
+#login-button,
+#register-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 10px;
+}
+
+#login-button {
+  background-color: #333;
+}
+
+#register-button {
+  background-color: #555;
+}
+
+#login-button:hover,
+#register-button:hover {
+  background-color: #444;
+}
