@@ -1,51 +1,55 @@
-import { useState } from 'react';
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useNavigate } from 'react-router-dom'
 
-import InputField from '../InputField';
+import { loginUser } from '../../validators/userValidator'
+import { login } from '../../service/auth'
 
-import './style.css';
+import './style.css'
 
 const LoginForm = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
+  const navigate = useNavigate()
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(loginUser)
+  })
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
+  const onSubmit = async ({ email, password }) => {
+    const result = await login(email, password)
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
+    if (!result) return
+
+    navigate("/dashboard")
   };
 
   return (
     <div className="login-form-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <InputField
-          label="Email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          type="email"
-          required
-        />
-        <InputField
-          label="Senha"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          type="password"
-          required
-        />
+      <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+      <div className="input-field-container">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            {...register("email")}
+            className="input-field"
+          />
+          <p className='errors'>{errors.email?.message}</p>
+        </div>
+        <div className="input-field-container">
+          <label htmlFor="password">Senha:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            {...register("password")}
+            className="input-field"
+          />
+          <p className='errors'>{errors.password?.message}</p>
+        </div>
         <button type="submit">Entrar</button>
       </form>
     </div>
   );
 };
 
-export default LoginForm;
+export default LoginForm
