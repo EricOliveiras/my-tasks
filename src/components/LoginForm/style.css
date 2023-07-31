@@ -27,3 +27,25 @@
 .login-form button:hover {
   background-color: #555;
 }
+
+
+.input-field-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.input-field-container label {
+  font-weight: bold;
+}
+
+.input-field {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.errors {
+  font-size: 0.9rem;
+  color: rgb(209, 71, 71);
+}
