@@ -24,3 +24,25 @@ export const createUser = async (firstName, lastName, email, password) => {
     }
   }
 }
+
+export const readUser = async (token) => {
+  try {
+    const result = await api.get("/user/me", {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+  
+    return result.data
+  } catch (error) {
+    if (error.response.status === 404) {
+      notify(error.response.status, "Usuário não encontrado!")
+      return
+    }
+
+    if (error.response.status === 500) {
+      notify(error.response.status, "INTERNAL SERVER ERROR")
+      return
+    }
+  }
+}
