@@ -18,6 +18,8 @@ const LoginForm = () => {
 
     if (!result) return
 
+    localStorage.setItem("token", result.data.token)
+
     navigate("/dashboard")
   };
 
