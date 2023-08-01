@@ -5,7 +5,7 @@ import Main from "../../components/Main"
 const Home = () => {
   return (
     <>
-      <Header />
+      <Header headerTitle={"My Tasks"}/>
       <Main />
       <Footer />
     </>
