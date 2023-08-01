@@ -1,0 +1,43 @@
+.task-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.divisor {
+  color: #575757;
+}
+
+.user-tasks-container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  margin: 20px 220px;
+}
+
+.user-tasks-container h3,
+.task-container h3,
+.task-info h3 {    
+  font-size: 20px;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#new-task-button {
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #555;
+}
