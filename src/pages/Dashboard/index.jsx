@@ -1,11 +1,9 @@
-import Footer from "../../components/Footer"
-import UserDashboard from "../../components/UserDashboard";
+import UserDashboard from "../../components/UserDashboard"
 
 const Dashboard = () => {
   return (
     <>
       <UserDashboard />
-      <Footer />
     </>
   )
 }
