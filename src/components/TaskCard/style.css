@@ -6,6 +6,9 @@
   padding: 16px;
   margin: 10px 20px 15px 0px;
   width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .task-header {
