@@ -99,7 +99,6 @@ const UserDashboard = () => {
     const getUser = async () => {
       const token = localStorage.getItem("token")
       const response = await readUser(token)
-      console.log(response.data.Task)
       setUser(response.data)
       setTask(response.data.Task)
     }
