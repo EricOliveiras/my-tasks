@@ -24,6 +24,8 @@ const Header = ({ headerTitle }) => {
     </>
   } else if (location.pathname === "/registrar" || location.pathname === "/entrar") {
     buttonComponent = <Button path="/" btnId="register-button" name="Voltar" />
+  } else if (location.pathname === "/perfil") {
+    buttonComponent = <Button path="/dashboard" btnId="register-button" name="Voltar" />
   } else {
     buttonComponent = 
     <>
