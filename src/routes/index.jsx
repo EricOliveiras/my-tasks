@@ -5,6 +5,7 @@ import Register from "../pages/Register"
 import Login from "../pages/Login"
 import Dashboard from "../pages/Dashboard"
 import PrivateRoute from "../components/PrivateRoute"
+import ProfilePage from "../pages/ProfilePage"
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,11 @@ const AppRouter = () => {
           <Route path="/dashboard" element={
             <PrivateRoute>
               <Dashboard />
+            </PrivateRoute>
+          }/>
+          <Route path="/perfil" element={
+            <PrivateRoute>
+              <ProfilePage />
             </PrivateRoute>
           }/>
         </Routes>
