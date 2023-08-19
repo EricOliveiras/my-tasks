@@ -13,7 +13,7 @@ Você precisa destas dependencias instaladas:
 ## Rodando localmente
 Clone o projeto
 ```bash
-  git clone https://github.com/EricOliveiras/my-tasks
+  git clone https://github.com/EricOliveiras/my-tasks.git
 ```
 ### Rodando o projeto
 
