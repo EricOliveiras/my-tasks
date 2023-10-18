@@ -37,7 +37,6 @@ export const deleteTask = async (token, id) => {
     return response
   } catch (error) {
     if (error.response.status) {
-      console.log(error.response)
       notify(error.response.status, "Algo deu errado!")
       return
     }
@@ -46,7 +45,7 @@ export const deleteTask = async (token, id) => {
 
 export const updateteTask = async (token, id, title, description) => {
   try {
-    const response = await api.put("/task", {
+    const response = await api.patch("/task", {
       id,
       title,
       description
@@ -69,7 +68,7 @@ export const updateteTask = async (token, id, title, description) => {
 
 export const finishTask = async (token, id) => {
   try {
-    const response = await api.put("/task", {
+    const response = await api.patch("/task", {
       id,
       finished: true
     }, {
