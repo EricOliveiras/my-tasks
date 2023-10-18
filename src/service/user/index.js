@@ -11,7 +11,7 @@ export const createUser = async (firstName, lastName, email, password) => {
     })
   
     notify(result.status, "Usuário cadastrado com sucesso!")
-    return result.data
+    return result.status
   } catch (error) {
     if (error.response.status === 409) {
       notify(error.response.status, "Email já cadastrado!")
@@ -27,7 +27,7 @@ export const createUser = async (firstName, lastName, email, password) => {
 
 export const readUser = async (token) => {
   try {
-    const result = await api.get("/user/me", {
+    const result = await api.get("/user", {
       headers: {
         Authorization: `Bearer ${token}`
       }
